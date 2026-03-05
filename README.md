@@ -2,19 +2,6 @@
 
 Vayana is a modern, digital solution for managing your personal book collection. Built with Next.js and MongoDB, it allows you to track your reading progress, manage your library, and keep tabs on books you've lent to friends.
 
-## 🎥 Kerala’s FIRST Ever LIVE Vibe Coding Using Antigravity
-
-This project was built live! Watch the recording of the first-ever Live Vibe Coding session in Kerala using Antigravity.
-
-[![Live Vibe Coding](https://img.youtube.com/vi/adPubKYe2EE/0.jpg)](https://www.youtube.com/live/adPubKYe2EE?si=ZnWgxGeoeEgXdVGC)
-
-**Watch here:** [https://www.youtube.com/live/adPubKYe2EE?si=ZnWgxGeoeEgXdVGC](https://www.youtube.com/live/adPubKYe2EE?si=ZnWgxGeoeEgXdVGC)
-
-### 🌟 The Team Behind The Vibe
-*   **Host:** Jobin Selvanose
-*   **Co-host:** Rizwan (Student Excellence Team, Brototype)
-*   **Behind the Camera:** Jomesh, Sharath, Afsal
-
 ---
 
 ## ✨ Features
@@ -69,11 +56,3 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 📝 Environment Setup
-
-Create a `.env.local` file in the root directory with the following variables:
-
-```env
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
-```
