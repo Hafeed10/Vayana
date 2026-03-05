@@ -5,12 +5,12 @@ import { NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import { SignJWT } from 'jose';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key'; // Ideally in env
+const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 
 export async function POST(request) {
-    await dbConnect();
-
     try {
+        await dbConnect();
+
         const { email, password } = await request.json();
 
         if (!email || !password) {
@@ -60,8 +60,9 @@ export async function POST(request) {
 
         return response;
     } catch (error) {
+        console.error('❌ Login Error:', error.message);
         return NextResponse.json(
-            { message: 'Internal Server Error' },
+            { message: error.message || 'Internal Server Error' },
             { status: 500 }
         );
     }
