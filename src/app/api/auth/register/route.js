@@ -5,9 +5,9 @@ import { NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 
 export async function POST(request) {
-    await dbConnect();
-
     try {
+        await dbConnect();
+
         const { email, password } = await request.json();
 
         if (!email || !password) {
@@ -29,7 +29,7 @@ export async function POST(request) {
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 
-        const newUser = await User.create({
+        await User.create({
             email,
             password: hashedPassword,
         });
@@ -39,8 +39,9 @@ export async function POST(request) {
             { status: 201 }
         );
     } catch (error) {
+        console.error('❌ Register Error:', error.message);
         return NextResponse.json(
-            { message: 'Internal Server Error' },
+            { message: error.message || 'Internal Server Error' },
             { status: 500 }
         );
     }
